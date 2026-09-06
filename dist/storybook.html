@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Silent Forest | Storybook reader</title>
+<style>
+*{box-sizing:border-box}html,body{margin:0;height:100%;background:#153e36;color:#fff;font:16px/1.6 'Segoe UI',sans-serif}body{display:flex;flex-direction:column}.reader-header{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:9px 15px;flex-wrap:wrap}.reader-header strong{font-size:14px}.reader-header a{color:#f0d79b;font-size:14px}.reader-stage{flex:1;position:relative;min-height:0}iframe{border:0;width:100%;height:100%;display:block}.reader-status{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;padding:25px;text-align:center;background:#153e36;z-index:2}.reader-status[hidden]{display:none}.reader-status p{max-width:48ch}.reader-status button{font:inherit;padding:8px 20px;color:#153e36;background:#edbf6b;border:0;border-radius:8px;cursor:pointer}.reader-status a{color:#f0d79b;margin-top:15px}button:focus-visible,a:focus-visible{outline:3px solid white;outline-offset:4px}
+</style>
+<script src="storybook-loader.js" defer></script>
+</head>
+<body>
+<header class="reader-header"><strong>The Silent Forest · illustrated storybook</strong><a href="https://github.com/sinanseden-eng/silent-forest/tree/main" target="_blank" rel="noopener noreferrer">Original on GitHub ↗</a></header>
+<main class="reader-stage"><iframe id="book-frame" title="The Silent Forest illustrated storybook" sandbox="allow-scripts" allow="fullscreen" allowfullscreen></iframe><div id="book-status" class="reader-status" role="status"><p id="book-status-text">Loading your storybook from GitHub…</p><button id="retry-book" hidden>Try again</button><a id="book-fallback" href="https://github.com/sinanseden-eng/silent-forest/tree/main" target="_blank" rel="noopener noreferrer" hidden>View the storybook repository</a></div></main>
+<noscript>Please enable JavaScript to load the storybook.</noscript>
+</body>
+</html>

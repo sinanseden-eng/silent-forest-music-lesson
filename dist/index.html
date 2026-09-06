@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#153e36">
+  <title>The Silent Forest | Music & Language</title>
+  <meta name="description" content="An eight-step Music unit lesson built around Sinan Seden’s illustrated Silent Forest storybook: read the embedded storybook, learn there was and adjective/adverb patterns, and predict the future of music.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23153e36'/%3E%3Ctext x='16' y='46' font-size='44' fill='%23ebbe68'%3E♪%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+  <script type="module" src="app.js"></script>
+</head>
+<body>
+  <a class="skip" href="#lesson">Skip to lesson</a>
+  <header class="topbar">
+    <a class="brand" href="#step-1" aria-label="The Silent Forest, first step"><span class="brand-mark" aria-hidden="true">♪</span><span>The Silent Forest<small>MUSIC & LANGUAGE</small></span></a>
+    <div class="header-right"><span class="unit-label">Unit 1 · Language in Use</span><div class="view-switch" role="group" aria-label="Lesson view"><button id="student-view" aria-pressed="false">Student</button><button id="teacher-view" aria-pressed="true">Teacher</button></div><button id="print-work" class="icon-button" aria-label="Print your lesson notes" title="Print lesson notes">Print notes</button></div>
+  </header>
+  <div class="app-layout">
+    <aside class="sidebar" aria-label="Lesson navigation">
+      <div class="sidebar-intro"><span class="eyebrow">YOUR LESSON PATH</span><p>From silence<br>to connection.</p><span class="sidebar-time">2 lessons · 40 minutes each</span></div>
+      <nav id="step-nav" aria-label="Lesson steps"></nav>
+      <div class="sidebar-bottom"><span id="progress-label">0 of 8 steps complete</span><progress id="progress" max="8" value="0" aria-label="Completed steps"></progress><p>Adjective + noun<br>Verb + adverb<br>There was → There may be</p><a href="https://github.com/sinanseden-eng/silent-forest/tree/main" target="_blank" rel="noopener noreferrer">Original storybook on GitHub ↗</a></div>
+    </aside>
+    <main id="lesson" tabindex="-1">
+      <div class="step-top"><span id="step-kicker" class="eyebrow"></span><span id="step-meta" class="meta-pill"></span></div>
+      <div class="title-row"><div><h1 id="step-title"></h1><p id="step-intro" class="intro"></p></div><div id="timer" class="timer" aria-label="Activity timer"><span id="timer-time" role="timer">05:00</span><button id="timer-toggle" aria-label="Start timer">Start</button><button id="timer-reset" aria-label="Reset timer">↺</button></div></div>
+      <div class="lesson-columns"><div id="step-content"></div><aside id="teacher-panel" class="teacher-panel" aria-label="Teacher guidance"></aside></div>
+      <footer class="step-footer"><button id="back-step" class="button ghost">← Previous</button><button id="complete-step" class="complete-button" aria-pressed="false">○ Mark complete</button><button id="next-step" class="button primary">Next step →</button></footer>
+      <p class="work-note">Written work stays in this open tab. Use “Print notes” to keep a copy before closing.</p>
+    </main>
+  </div>
+  <div id="announcement" class="sr-only" aria-live="polite"></div>
+  <section id="print-output" aria-label="Lesson notes"></section>
+  <noscript>This lesson needs JavaScript for its step navigation and activities. Please enable JavaScript and reload.</noscript>
+</body>
+</html>
