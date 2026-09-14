@@ -15,7 +15,13 @@ It is pinned to the checked storybook revision, so the chapter shortcuts stay al
 The book remains in the owner's repository; this package contains a reader loader.
 
 Teacher and Student are display views of the same lesson.
-Written answers stay in the open browser tab. Use Print notes before closing it.
+Save progress buttons at the top and bottom of every step save all answers,
+completed steps, and your lesson position in this browser’s local website storage.
+Progress restores when you return to the same website on the same iPad/device,
+browser and browser profile. No login is required. Click Save progress after editing.
+Private browsing or clearing website data can remove saved work. Browser storage
+is not a permanent backup; use Print notes to keep an additional copy.
+This is one saved lesson per browser profile, not separate student accounts.
 The lesson does not send student work to a server.
 
 Suggested timing: three 40-minute lessons.
@@ -24,3 +30,4 @@ Lesson 2: Grammar & sound — steps 3–5 (12 + 20 + 8 minutes).
 Lesson 3: The future of music — steps 6–8 (10 + 20 + 10 minutes).
 Pause on story page 10 for Tom’s persuasion discussion before reading page 11.
 Step 6 is the prior activity for the page 9 discussion in Step 7.
+

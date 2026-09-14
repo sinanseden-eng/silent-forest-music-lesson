@@ -23,11 +23,13 @@
       <div class="sidebar-bottom"><span id="progress-label">0 of 8 steps complete</span><progress id="progress" max="8" value="0" aria-label="Completed steps"></progress><p>Adjective + noun<br>Verb + adverb<br>There was → There may be</p><a href="https://github.com/sinanseden-eng/silent-forest/tree/main" target="_blank" rel="noopener noreferrer">Original storybook on GitHub ↗</a></div>
     </aside>
     <main id="lesson" tabindex="-1">
+      <section class="save-bar" aria-label="Save lesson progress"><button class="button primary" data-save-progress aria-describedby="save-help-top">Save progress</button><div><p class="save-status" data-save-status></p><p id="save-help-top" class="save-help">Return to this same website on the same iPad, using the same browser and browser profile, to continue your studies. No login is needed. Use normal browsing, and keep this website’s data: clearing it or using private browsing can remove saved work.</p></div></section>
       <div class="step-top"><span id="step-kicker" class="eyebrow"></span><span id="step-meta" class="meta-pill"></span></div>
       <div class="title-row"><div><h1 id="step-title"></h1><p id="step-intro" class="intro"></p></div><div id="timer" class="timer" aria-label="Activity timer"><span id="timer-time" role="timer">05:00</span><button id="timer-toggle" aria-label="Start timer">Start</button><button id="timer-reset" aria-label="Reset timer">↺</button></div></div>
       <div class="lesson-columns"><div id="step-content"></div><aside id="teacher-panel" class="teacher-panel" aria-label="Teacher guidance"></aside></div>
       <footer class="step-footer"><button id="back-step" class="button ghost">← Previous</button><button id="complete-step" class="complete-button" aria-pressed="false">○ Mark complete</button><button id="next-step" class="button primary">Next step →</button></footer>
-      <p class="work-note">Written work stays in this open tab. Use “Print notes” to keep a copy before closing.</p>
+      <section class="save-bar save-bar-bottom" aria-label="Save lesson progress"><button class="button primary" data-save-progress aria-describedby="save-help-bottom">Save progress</button><div><p class="save-status" data-save-status></p><p id="save-help-bottom" class="save-help">Return to this same website on the same iPad, using the same browser and browser profile, to continue your studies. No login is needed. Use normal browsing, and keep this website’s data: clearing it or using private browsing can remove saved work.</p></div></section>
+      <p class="work-note">Each Save progress button saves your answers and completed steps across all three lessons. Use Print notes for an extra copy.</p>
     </main>
   </div>
   <div id="announcement" class="sr-only" aria-live="polite"></div>
@@ -35,3 +37,4 @@
   <noscript>This lesson needs JavaScript for its step navigation and activities. Please enable JavaScript and reload.</noscript>
 </body>
 </html>
+
