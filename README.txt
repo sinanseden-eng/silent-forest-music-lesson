@@ -15,7 +15,7 @@ It is pinned to the checked storybook revision, so the chapter shortcuts stay al
 The book remains in the owner's repository; this package contains a reader loader.
 
 Every visit starts in Student view, including when saved work is restored.
-Teacher access: tap the small star (✦) at the bottom-right, below the save area.
+Teacher access: tap the small star (✦) at the bottom-left, below the save area.
 Tap it again or choose Student at the top to hide the guide. Teacher mode lasts
 for the current visit only. This is a discreet display toggle, not authentication.
 Save progress buttons at the top and bottom of every step save all answers,
