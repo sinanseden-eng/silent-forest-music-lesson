@@ -14,7 +14,10 @@ The storybook reader loads the public GitHub source and pictures over the intern
 It is pinned to the checked storybook revision, so the chapter shortcuts stay aligned.
 The book remains in the owner's repository; this package contains a reader loader.
 
-Teacher and Student are display views of the same lesson.
+Every visit starts in Student view, including when saved work is restored.
+Teacher access: tap the small star (✦) at the bottom-right, below the save area.
+Tap it again or choose Student at the top to hide the guide. Teacher mode lasts
+for the current visit only. This is a discreet display toggle, not authentication.
 Save progress buttons at the top and bottom of every step save all answers,
 completed steps, and your lesson position in this browser’s local website storage.
 Progress restores when you return to the same website on the same iPad/device,

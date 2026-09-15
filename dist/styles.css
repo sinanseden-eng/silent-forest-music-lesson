@@ -13,3 +13,10 @@
 .save-bar{display:flex;align-items:flex-start;gap:16px;padding:16px 18px;margin:0 0 24px;background:#edf5ec;border:1px solid #cbdcc9;border-radius:12px}.save-bar .button{flex-shrink:0;min-height:44px}.save-status{font-size:.9rem;font-weight:650;color:var(--forest);margin:0 0 5px;overflow-wrap:anywhere}.save-help{font-size:.8rem;line-height:1.55;color:var(--muted);margin:0}.save-status[data-kind=error]{color:#8a321f}.save-status[data-kind=unsaved]{color:#785118}.save-bar-bottom{margin:24px 0 0}
 @media(max-width:600px){.save-bar{flex-direction:column;gap:12px}.save-bar .button{width:100%}}
 @media print{.save-bar{display:none!important}}
+
+/* Keep teacher tools out of the student layout, including before JavaScript loads. */
+.view-switch[hidden],.teacher-panel[hidden]{display:none!important}
+.teacher-entry-row{display:flex;justify-content:flex-end;margin-top:10px}
+.teacher-entry{display:grid;place-items:center;min-width:44px;min-height:44px;border:0;border-radius:50%;background:transparent;color:var(--muted);font-size:1.1rem}
+.teacher-entry:hover,.teacher-entry[aria-expanded=true]{background:#e9efe8;color:var(--forest)}
+@media print{.teacher-entry-row{display:none!important}}

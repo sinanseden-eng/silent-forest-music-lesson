@@ -4,13 +4,13 @@ import {loadSavedProgress, persistProgress} from './progress-store.js';
 
 const $=id=>document.getElementById(id);
 const escape=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const state={step:parseStep(location.hash),view:'teacher',scene:0,bookChapter:1,drafts:{},labels:{},fieldSteps:{},complete:new Set(),checked:{},times:steps.map(s=>s.minutes*60)};
+const state={step:parseStep(location.hash),view:'student',scene:0,bookChapter:1,drafts:{},labels:{},fieldSteps:{},complete:new Set(),checked:{},times:steps.map(s=>s.minutes*60)};
 let timerHandle=null,timerDeadline=0;
 
 const savedProgress=loadSavedProgress(steps.length,scenes.length);
 if(savedProgress.status==='restored'){
   const saved=savedProgress.data;
-  Object.assign(state,saved,{complete:new Set(saved.complete)});
+  Object.assign(state,saved,{complete:new Set(saved.complete),view:'student'});
   // An explicit link to a lesson step takes priority over the saved position.
   if(/^#step-[1-8]$/.test(location.hash))state.step=parseStep(location.hash);
 }
@@ -95,7 +95,20 @@ function render(){const s=steps[state.step];$('lesson').classList.toggle('readin
 function renderFinish(){if(!$('finish-message'))return;if(state.complete.has(7))$('finish-message').innerHTML=`<div class="success-card"><span class="card-label">YOUR NEXT STEP</span><h2>${state.complete.size===8?'The lesson is complete.':'Your final step is complete.'}</h2><p>${state.complete.size===8?'Share your response with your teacher, and keep a copy of your notes.':`${state.complete.size} of 8 steps are marked complete. You can return to any unfinished step.`}</p></div>`;else $('finish-message').innerHTML='';}
 function announce(message){$('announcement').textContent=message;}
 function navigate(i){if(!Number.isInteger(i)||i<0||i>=8)return;stopTimer();pauseAudio();state.step=i;markUnsaved();history.pushState(null,'',`#step-${i+1}`);render();$('lesson').focus({preventScroll:true});window.scrollTo({top:0,behavior:'instant'});announce(`Step ${i+1}: ${steps[i].short}`);}
-function setView(view){state.view=view;document.body.classList.toggle('student-mode',view==='student');$('student-view').setAttribute('aria-pressed',String(view==='student'));$('teacher-view').setAttribute('aria-pressed',String(view==='teacher'));announce(view==='student'?'Student view. Teacher guidance is hidden.':'Teacher view. Step-by-step teaching guidance is visible.');}
+function setView(view){
+  const teacher=view==='teacher';
+  state.view=teacher?'teacher':'student';
+  document.body.classList.toggle('student-mode',!teacher);
+  $('teacher-panel').hidden=!teacher;
+  const controls=$('view-switch');
+  if(!teacher&&controls.contains(document.activeElement))$('teacher-tools-toggle').focus({preventScroll:true});
+  controls.hidden=!teacher;
+  $('student-view').setAttribute('aria-pressed',String(!teacher));
+  $('teacher-view').setAttribute('aria-pressed',String(teacher));
+  $('teacher-tools-toggle').setAttribute('aria-expanded',String(teacher));
+  $('teacher-tools-toggle').setAttribute('aria-label',teacher?'Hide teacher guide':'Show teacher guide');
+  announce(teacher?'Teacher view. Step-by-step teaching guidance is visible.':'Student view. Teacher guidance is hidden.');
+}
 
 function showFeedback(id,html,retry=false){const el=$(id);if(!el)return;el.innerHTML=html;el.classList.toggle('retry',retry);}
 function checkReading(){const i=state.scene,s=scenes[i],v=state.drafts['read-'+i];if(v===undefined){showFeedback('reading-feedback','Choose an answer first.',true);return;}state.checked['reading-'+i]=true;const ok=Number(v)===s.answer;showFeedback('reading-feedback',`<strong>${ok?'That matches the story.':'Revisit the page and try again.'}</strong> ${s.explain}`,!ok);}
@@ -120,6 +133,7 @@ function bindAudio(){document.querySelectorAll('audio').forEach(a=>{a.volume=.65
 function printableValue(key,value){if(typeof value==='boolean')return value?'Reviewed':'Not reviewed';if(key.startsWith('existence-'))return existenceQuestions[Number(key.split('-')[1])]?.options[Number(value)]||value;if(key.startsWith('future-'))return futureQuestions[Number(key.split('-')[1])]?.options[Number(value)]||value;if(key.startsWith('sort-'))return value==='an'?'Adjective + noun':value==='va'?'Verb + adverb':value;if(key.startsWith('read-'))return scenes[Number(key.split('-')[1])]?.choices[Number(value)]||value;if(key.startsWith('form-'))return formQuestions[Number(key.split('-')[1])]?.options[Number(value)]||value;return value;}
 function printNotes(){pauseAudio();const responses=steps.map((s,i)=>{const keys=Object.keys(state.drafts).filter(k=>state.fieldSteps[k]===i&&state.drafts[k]!==''&&state.drafts[k]!==false);const guide=state.view==='teacher'?`<section><h3>Teacher guide · ${s.minutes} minutes</h3><p><strong>Book:</strong> ${s.teacher.pages}</p><p>${s.teacher.goal}</p><ol>${s.teacher.actions.map(a=>`<li>${a}</li>`).join('')}</ol><p><strong>Look for:</strong> ${s.teacher.look}</p></section>`:'';return `<h2>Lesson ${s.lesson} · ${lessonTitles[s.lesson-1]} / Step ${i+1}: ${s.short}</h2>${guide}${keys.length?keys.map(k=>`<section><h3>${escape(state.labels[k]||k)}</h3><p>${escape(printableValue(k,state.drafts[k]))}</p></section>`).join(''):'<p>No written response recorded for this step.</p>'}`;}).join('');$('print-output').innerHTML=`<h1>The Silent Forest</h1><p class="print-meta">Music & Language · Three 40-minute lessons · ${state.view==='teacher'?'Teacher guide and lesson notes':'Student lesson notes'}</p>${responses}<p class="print-meta">Companion to Sinan Seden’s illustrated storybook. Unit 1, printed page 9, Exercise 6.</p>`;window.print();}
 
+$('teacher-tools-toggle').addEventListener('click',()=>setView(state.view==='teacher'?'student':'teacher'));
 $('student-view').addEventListener('click',()=>{setView('student');markUnsaved();});
 $('teacher-view').addEventListener('click',()=>{setView('teacher');markUnsaved();});
 $('step-nav').addEventListener('click',e=>{const b=e.target.closest('[data-step]');if(b)navigate(Number(b.dataset.step));});
