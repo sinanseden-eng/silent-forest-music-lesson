@@ -18,5 +18,5 @@
 .view-switch[hidden],.teacher-panel[hidden]{display:none!important}
 .teacher-entry-row{display:flex;justify-content:flex-start;margin-top:10px}
 .teacher-entry{display:grid;place-items:center;min-width:44px;min-height:44px;border:0;border-radius:50%;background:transparent;color:var(--muted);font-size:1.1rem}
-.teacher-entry:hover,.teacher-entry[aria-expanded=true]{background:#e9efe8;color:var(--forest)}
+.teacher-entry:hover,.teacher-entry[aria-expanded=true]{background:transparent}
 @media print{.teacher-entry-row{display:none!important}}
