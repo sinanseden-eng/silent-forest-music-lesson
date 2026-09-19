@@ -175,7 +175,7 @@ export const steps = [
       "look": "A position supported by a reason. Accept contrasting interpretations of the same sound.",
       "support": "Offer: Music can communicate ___ because ___. Students can give an oral answer before writing.",
       "extend": "Ask whether silence can communicate a message too.",
-      "ready": "Students have a reasoned opinion and a story prediction. The final application will concern the future of music on page 9."
+      "ready": "Students have a reasoned opinion and a story prediction."
     }
   },
   {
@@ -184,22 +184,22 @@ export const steps = [
     "lesson": 1,
     "minutes": 35,
     "group": "Read · pause · discuss",
-    "intro": "Read the embedded storybook in three stages. Pause on story page 10 to discuss Tom’s next move before reading the resolution.",
+    "intro": "Read the story in three stages. Record only the most important evidence so that discussion—not form filling—remains central.",
     "teacher": {
       "pages": "1–3 · 4–12 · 13–15",
-      "goal": "Explain the cause of the silence, propose persuasive action, and distinguish environmental repair from musical connection.",
+      "goal": "Explain the cause of the silence, propose one persuasive action, and distinguish environmental repair from musical connection.",
       "actions": [
-        "0–5 min · Read pages 1–3. Compare the sounds and feelings; discuss the first comprehension question.",
-        "5–15 min · Read pages 4–10. Pause at Not Yet (6) and The Sick River (8), then stop at The Cause (10). Do not read page 11 yet.",
-        "15–23 min · Discuss Tom’s next move: think alone for 1 minute, develop two ideas with a partner for 2 minutes, role-play Tom and a hesitant inhabitant for 3 minutes, then share for 2 minutes.",
-        "23–30 min · Read pages 11–15. Compare students’ proposals with the towns’ actual response and discuss the remaining comprehension questions.",
-        "30–35 min · Explain practical repair versus musical connection. Retell the problem, investigation, action, and return to a partner; print notes if needed."
+        "0–6 min · Read pages 1–3. Discuss the first comprehension question orally.",
+        "6–15 min · Read pages 4–10. Pause briefly at pages 6 and 8, then stop at page 10. Do not read page 11 yet.",
+        "15–23 min · Complete the persuasion task: think, develop one strong idea, role-play Tom and a hesitant inhabitant, then share.",
+        "23–31 min · Read pages 11–15. Answer the remaining comprehension questions and compare the ending with students’ proposals.",
+        "31–35 min · Contrast practical repair with musical connection. Retell the problem, investigation, action, and return."
       ],
-      "say": "What else could Tom do to win over more inhabitants of the neighbouring town and persuade them to help clean up the river?",
-      "look": "Accept different proposals supported by story evidence: show the polluted river, explain shared benefits, listen to concerns, or organise a joint clean-up. Music may bring people together, but practical action must address the pollution.",
-      "support": "Offer: Tom could ___ because ___. This might persuade people who worry about ___. Use the numbered page checkpoints and allow paired reading.",
-      "extend": "Ask which proposal would persuade a hesitant inhabitant most, and what objection Tom would need to answer.",
-      "ready": "Students can retell the cause and solution, justify a persuasion idea, and distinguish practical repair from music. Next lesson: use these familiar events to discover the grammar."
+      "say": "What could Tom do to persuade more inhabitants to help clean up the river?",
+      "look": "One clear proposal supported by a reason or story evidence. Music may connect people, but practical action must address the pollution.",
+      "support": "Offer: Tom could ___ because ___. This might persuade people who worry about ___. Allow paired reading and oral responses.",
+      "extend": "Ask what objection a hesitant inhabitant might raise and how Tom could answer it.",
+      "ready": "Students can retell the story, justify one persuasion idea, and explain the different roles of repair and music."
     }
   },
   {
@@ -208,44 +208,44 @@ export const steps = [
     "lesson": 2,
     "minutes": 12,
     "group": "Discover · sort · explain",
-    "intro": "Recall the story from Lesson 1, then revisit familiar pages. Find what a word describes before deciding which pattern it belongs to.",
+    "intro": "Recall the story, revisit familiar language, and decide whether a word describes a noun or an action.",
     "teacher": {
       "pages": "Sound words ON · pages 2, 5, 7, 8, 12, 14, 15",
       "goal": "Distinguish adjective + noun from verb + adverb, then build past descriptions with there was / there were.",
       "actions": [
-        "0–2 min · Reconnect with Lesson 1: pairs retell one problem and one action. Reopen the relevant story page with Sound words ON.",
-        "2–5 min · Compare story phrases and teaching captions. Ask “What kind?” for adjective + noun and “How?” for verb + adverb.",
-        "5–8 min · Build There was a joyful celebration. Contrast beautiful music (uncountable) and loud voices (plural).",
-        "8–12 min · Sort six phrases and explain choices. Turn one noun phrase into a complete there was / were sentence."
+        "0–3 min · Pairs recall one setting and one action from the story.",
+        "3–7 min · Compare adjective–noun and verb–adverb examples. Ask What kind? or How?",
+        "7–10 min · Introduce there was / were with singular, uncountable, and plural nouns.",
+        "10–12 min · Begin the six-phrase sort and explain at least two choices aloud."
       ],
-      "say": "Are we describing an action, or introducing something that existed or happened?",
-      "look": "There was + a/an + adjective + singular countable noun; there was + adjective + uncountable noun; there were + adjective + plural noun.",
-      "support": "Underline the noun first. Ask: one countable thing, an uncountable amount, or more than one?",
-      "extend": "Keep carefully/careful distinct. Save adverbs modifying adjectives and linking-verb exceptions for students who are ready.",
-      "ready": "Students can distinguish the phrase patterns and build a complete there was / were description."
+      "say": "Are we describing a person or thing, or are we describing how an action happens?",
+      "look": "Students identify the word being described before naming its grammatical form.",
+      "support": "Underline the noun or verb first. Then ask What kind? or How?",
+      "extend": "Discuss why not every -ly word describes an action.",
+      "ready": "Students can distinguish the two patterns and build a basic there was / were description."
     }
   },
   {
     "title": "Give your sentences a little direction.",
-    "short": "Practise & transform",
+    "short": "Practise & report",
     "lesson": 2,
     "minutes": 20,
-    "group": "Choose · rewrite · check",
-    "intro": "Choose the right word form, check there was / were, and describe the same event in two ways.",
+    "group": "Choose · rewrite · speak",
+    "intro": "Practise the forms briefly, then use them orally in the Story Scene Reporter challenge.",
     "teacher": {
       "pages": "Revisit pages 8, 12, 15 · teaching practice",
-      "goal": "Use there was + adjective–noun phrases accurately and preserve meaning in action-to-event rewrites.",
+      "goal": "Use the target patterns accurately and describe a remembered story scene fluently enough for a partner to identify it.",
       "actions": [
-        "0–5 min · Complete the four adjective/adverb choices. Explain the word being described before checking.",
-        "5–9 min · Check was/were and a/an with three examples; correct one sentence aloud with a partner.",
-        "9–15 min · Model the investigation pair, then complete and compare the three there was rewrites.",
-        "15–20 min · Write a past description and an action about a musical moment. A partner checks noun agreement and adjective/adverb choice."
+        "0–4 min · Complete the four adjective/adverb choices.",
+        "4–7 min · Check was/were and a/an with the three examples.",
+        "7–12 min · Complete and compare the three action-to-event rewrites.",
+        "12–20 min · Story Scene Reporter: study a scene, hide it, describe it with both target patterns, and let a partner identify it. Swap roles."
       ],
-      "say": "What happened? How can we introduce that event with there was and a noun phrase?",
-      "look": "There was a joyful celebration; there was a happy smile; there was a soft whisper. Plural nouns take there were.",
-      "support": "Give the full frame: There was a ___ celebration in town. Choose joyful, not joyfully, before the noun.",
-      "extend": "Compare There was a careful investigation with Tom investigated carefully. The event is similar, but the sentence focuses on a different element.",
-      "ready": "Students can describe a past event in both patterns. Apply the language to the soundtrack next; save future predictions for Lesson 3."
+      "say": "Can your partner identify the scene from your description alone?",
+      "look": "There was / were + adjective–noun and a past verb + adverb used meaningfully in oral speech.",
+      "support": "Offer: There was a/an ___. There were ___. Eva/Tom/the villagers ___-ed ___.",
+      "extend": "Ask the listener to request one extra detail before guessing.",
+      "ready": "Students can use both patterns orally, not only recognise them in an exercise."
     }
   },
   {
@@ -254,20 +254,20 @@ export const steps = [
     "lesson": 2,
     "minutes": 8,
     "group": "Listen · compare · justify",
-    "intro": "Keep the glade picture the same. Change the sound and notice how your interpretation changes.",
+    "intro": "Use sound to reinterpret the same scene. Different answers are welcome when students explain what they heard.",
     "teacher": {
-      "pages": "The Same Glade · Three Soundtracks (after page 15)",
-      "goal": "Use descriptive language to explain an interpretation of music rather than assuming a single universal response.",
+      "pages": "Glade image · three original audio sketches",
+      "goal": "Use the target patterns to describe sound and justify an interpretation.",
       "actions": [
-        "0–2 min · Choose a story moment and recall its adjective–noun and verb–adverb descriptions.",
-        "2–5 min · Listen to the three audio sketches with the same glade image.",
-        "5–8 min · Students describe what they heard with There was… and explain one action with an adverb."
+        "0–2 min · Choose a story moment and recall one description.",
+        "2–5 min · Listen to the three audio sketches while viewing the same image.",
+        "5–8 min · Describe one version with both target patterns and justify the interpretation."
       ],
-      "say": "What changed your interpretation: pitch, pace, pauses, your memories, or the picture?",
-      "look": "A description plus a reason. The mood names suggest intentions; students may hear them differently.",
+      "say": "What changed your interpretation: pitch, tempo, melody, pauses, memory, or the picture?",
+      "look": "A description and an audible reason. Encourage reuse of music vocabulary such as melody, pitch, tempo, soundtrack, and track.",
       "support": "Offer gentle melody, slow notes, unsettling sound; plays softly, moves slowly, listens carefully.",
-      "extend": "Ask whether a cheerful soundtrack could make the polluted-river scene seem ironic or uncomfortable.",
-      "ready": "End Lesson 2 by sharing a there was / were description and a verb–adverb sentence. Print notes to keep them. Next lesson: imagine how music experiences could change."
+      "extend": "Ask whether a cheerful soundtrack could create irony in the polluted-river scene.",
+      "ready": "Students can describe and justify one soundtrack interpretation using both target patterns."
     }
   },
   {
@@ -276,66 +276,69 @@ export const steps = [
     "lesson": 3,
     "minutes": 10,
     "group": "Recall · explore · predict",
-    "intro": "Use the language you know, change the time reference, and get ready for the page 9 discussion.",
+    "intro": "Keep the language pattern, change the time reference, and prepare for the page 9 discussion.",
     "teacher": {
       "pages": "Story pages 12–15 → Unit 1, printed page 9, Exercise 6",
-      "goal": "Bridge story descriptions to future predictions and clarify the eight music topics before discussion.",
+      "goal": "Bridge past story descriptions to future predictions and clarify the eight music topics.",
       "actions": [
-        "0–2 min · Retrieve a Lesson 2 sentence about Eva’s music. Imagine the same celebration with a different way to make or hear music.",
-        "2–4 min · Compare there was / celebrated with there will be / will celebrate. Introduce may or might for uncertainty.",
-        "4–7 min · Read the eight topic cards and clarify unfamiliar terms, especially hologram popstars and virtual reality.",
-        "7–10 min · Check two paired predictions and make one of your own. Specify what may rise or fall: sales, use, attendance, or popularity."
+        "0–2 min · Retrieve one Lesson 2 sentence about Eva’s music.",
+        "2–4 min · Compare there was / celebrated with there will be / will celebrate. Add may or might for uncertainty.",
+        "4–7 min · Read the eight topic cards and clarify unfamiliar terms.",
+        "7–10 min · Check two prediction patterns and name the measure that may change."
       ],
-      "say": "The story gave us a way to describe an event. Which time expression and verb form do we need to imagine the next one?",
-      "look": "There was describes a past event; there will/may/might be predicts an event. Rise or fall needs a clear measure, such as attendance or use.",
-      "support": "Model: Use will increase gradually → There will be a gradual increase in use. Give the word pair gradual/gradually.",
-      "extend": "Ask whether popularity could stay steady, or grow for one audience and decline for another. Predictions need reasons, not invented statistics.",
-      "ready": "Students know the eight topics and can make one prediction with a verb–adverb structure and one with there will/may be + adjective–noun."
+      "say": "Which time expression and verb form do we need to move from the story into the future?",
+      "look": "A clear shift from past to future and an explicit measure such as use, sales, attendance, or popularity.",
+      "support": "Model: Use will increase gradually → There will be a gradual increase in use.",
+      "extend": "Ask whether a trend could rise for one audience but fall for another.",
+      "ready": "Students understand the eight topics and can make one supported future prediction."
     }
   },
   {
     "title": "How will music develop?",
     "short": "Page 9: music futures",
     "lesson": 3,
-    "minutes": 20,
-    "group": "Pairs · compare · justify",
-    "intro": "Discuss the eight topics from page 9. Predict a direction, name what is changing, and explain your reasoning.",
+    "minutes": 30,
+    "group": "Scan · focus · exchange",
+    "intro": "Consider all eight topics quickly, then develop two predictions carefully. Depth wins this round.",
     "teacher": {
-      "pages": "Unit 1, printed page 9, Exercise 6 (page 6 of the uploaded PDF)",
-      "goal": "Apply the story-taught grammar to the coursebook’s music-futures discussion without graph analysis.",
+      "pages": "Unit 1, printed page 9, Exercise 6",
+      "goal": "Apply the target grammar in a focused, reasoned discussion and prepare ideas for the writing workshop.",
       "actions": [
-        "0–4 min · Partners consider all eight page 9 topics and choose an initial direction for each.",
-        "4–12 min · Each partner develops two predictions with reasons. Across the pair, include verb + adverb and there will/may be + adjective + noun.",
-        "12–16 min · Compare a disagreement. Explain reasons, ask a follow-up question, and consider a different outcome.",
-        "16–20 min · Add one other musical trend or technology and explain how it might change making, sharing, or hearing music."
+        "0–5 min · Partners scan all eight topics and select a likely direction for each.",
+        "5–17 min · Each pair chooses two focus topics and develops two detailed predictions with reasons.",
+        "17–25 min · Exchange ideas with another pair. Ask a follow-up question and record one useful alternative.",
+        "25–30 min · Add one original trend or technology and choose the strongest ideas to carry into Lesson 4."
       ],
-      "say": "What exactly might rise or fall, for whom, and over what time period? Why do you think so?",
-      "look": "An explicit subject or measure, an appropriate future form, accurate adjective/adverb choices, and a reason. There are no factual answer keys for predictions.",
+      "say": "What exactly might change, for whom, and why?",
+      "look": "Two developed predictions rather than eight repeated claims. Across the pair, include both target future patterns and at least two music words.",
       "support": "Offer: Over the next five years, ___ may increase gradually because ___. There may be a gradual increase in ___.",
-      "extend": "Ask for a condition or counterargument: unless, if, or however. A format can survive among enthusiasts even if overall use falls.",
-      "ready": "Each pair has considered all eight topics, developed four predictions, and suggested one additional idea."
+      "extend": "Add a condition or counterargument using if, unless, or however.",
+      "ready": "Each pair has two well-supported coursebook predictions, one original idea, and useful notes for Lesson 4."
     }
   },
   {
-    "title": "Write your music forecast.",
-    "short": "Reflect & finish",
-    "lesson": 3,
-    "minutes": 10,
-    "group": "Individual exit response",
-    "intro": "Predict how music may change over the next five years. Use the three language structures deliberately.",
+    "title": "Write, review, and improve your music forecast.",
+    "short": "Forecast workshop",
+    "lesson": 4,
+    "minutes": 40,
+    "group": "Model · plan · draft · revise",
+    "intro": "Turn the previous lesson’s discussion into a polished 80–100-word forecast through planning, peer feedback, and revision.",
     "teacher": {
-      "pages": "Page 9, Exercise 6 · individual transfer",
-      "goal": "Assess the shift from past descriptions to justified future predictions, with accurate noun and verb constructions.",
+      "pages": "Page 9, Exercise 6 · process-writing workshop",
+      "goal": "Produce and improve an 80–100-word forecast using the unit’s grammar, vocabulary, and supporting reasons.",
       "actions": [
-        "0–7 min · Write 80–120 words about at least two page 9 topics and one new idea. Include a short story reference using there was.",
-        "7–9 min · Identify the past description, future noun construction, and verb–adverb prediction; use the checklist.",
-        "9–10 min · Record one language point to revisit. Print notes to keep the three-lesson work."
+        "0–5 min · Retrieve and classify three past/future model sentences.",
+        "5–12 min · Read the model paragraph and locate its story reference, predictions, target patterns, and reasons.",
+        "12–18 min · Plan two page 9 topics, one additional idea, useful vocabulary, and supporting reasons.",
+        "18–30 min · Write an individual 80–100-word draft.",
+        "30–36 min · Exchange drafts and use the peer checklist.",
+        "36–40 min · Make at least two revisions, complete the self-check, and save or print the final version."
       ],
-      "say": "Which sentence looks back at the story, and which sentences predict the future?",
-      "look": "There was + adjective–noun in a past story reference; there will/may/might be + adjective–noun for a prediction; a future verb + adverb; reasons and a clear time frame.",
-      "support": "Offer a brief story sentence, then Over the next five years… Keep uncertainty explicit with may or might.",
-      "extend": "Add a condition or alternative outcome. Check that a prediction is not presented as verified current data.",
-      "ready": "Use the response to identify whether students need more practice with agreement, word class, time reference, or reasons."
+      "say": "Which revision makes your prediction clearer or more convincing?",
+      "look": "A clear time frame, two coursebook topics, one additional idea, reasons, and accurate use of the three target constructions.",
+      "support": "Allow students to adapt the model structure and use sentence starters. Prioritise clarity over elaborate vocabulary.",
+      "extend": "Add a condition, counterargument, or contrast without exceeding 100 words.",
+      "ready": "Students submit a revised 80–100-word forecast and can identify the language choices they used."
     }
   }
 ];
@@ -471,4 +474,4 @@ export function wordCount(value){return (String(value).trim().match(/\S+/g)||[])
 export function parseStep(hash){const m=String(hash).match(/^#step-([1-8])$/);return m?Number(m[1])-1:0;}
 export function formatTime(value){return `${String(Math.floor(Math.max(0,value)/60)).padStart(2,'0')}:${String(Math.max(0,value)%60).padStart(2,'0')}`;}
 
-export const lessonTitles = ["Story & persuasion", "Grammar & sound", "The future of music"];
+export const lessonTitles = ["Story & persuasion", "Grammar & sound", "The future of music", "Forecast workshop"];
