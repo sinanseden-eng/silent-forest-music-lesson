@@ -137,6 +137,96 @@ function bindAudio(){document.querySelectorAll('audio').forEach(a=>{a.volume=.65
 function printableValue(key,value){if(typeof value==='boolean')return value?'Reviewed':'Not reviewed';if(key.startsWith('existence-'))return existenceQuestions[Number(key.split('-')[1])]?.options[Number(value)]||value;if(key.startsWith('future-'))return futureQuestions[Number(key.split('-')[1])]?.options[Number(value)]||value;if(key.startsWith('sort-'))return value==='an'?'Adjective + noun':value==='va'?'Verb + adverb':value;if(key.startsWith('read-'))return scenes[Number(key.split('-')[1])]?.choices[Number(value)]||value;if(key.startsWith('form-'))return formQuestions[Number(key.split('-')[1])]?.options[Number(value)]||value;return value;}
 function printNotes(){pauseAudio();const responses=steps.map((s,i)=>{const keys=Object.keys(state.drafts).filter(k=>state.fieldSteps[k]===i&&state.drafts[k]!==''&&state.drafts[k]!==false);const guide=state.view==='teacher'?`<section><h3>Teacher guide · ${s.minutes} minutes</h3><p><strong>Book:</strong> ${s.teacher.pages}</p><p>${s.teacher.goal}</p><ol>${s.teacher.actions.map(a=>`<li>${a}</li>`).join('')}</ol><p><strong>Look for:</strong> ${s.teacher.look}</p></section>`:'';return `<h2>Lesson ${s.lesson} · ${lessonTitles[s.lesson-1]} / Step ${i+1}: ${s.short}</h2>${guide}${keys.length?keys.map(k=>`<section><h3>${escape(state.labels[k]||k)}</h3><p>${escape(printableValue(k,state.drafts[k]))}</p></section>`).join(''):'<p>No written response recorded for this step.</p>'}`;}).join('');$('print-output').innerHTML=`<h1>The Silent Forest</h1><p class="print-meta">Music & Language · Four 40-minute lessons · ${state.view==='teacher'?'Teacher guide and lesson notes':'Student lesson notes'}</p>${responses}<p class="print-meta">Companion to Sinan Seden’s illustrated storybook. Unit 1, printed page 9, Exercise 6.</p>`;window.print();}
 
+
+function staticizePrintHtml(html){
+  const wrap=document.createElement('div');
+  wrap.innerHTML=html;
+  wrap.querySelectorAll('iframe').forEach(frame=>{
+    const note=document.createElement('div');
+    note.className='print-story-note';
+    const recap=scenes[state.scene]?.recap||'Read this story stage in the online storybook.';
+    note.innerHTML='<strong>Illustrated storybook:</strong> '+escape(recap)+'<br><span>Illustrations remain available in the online storybook.</span>';
+    frame.replaceWith(note);
+  });
+  wrap.querySelectorAll('.scene-nav,.book-checkpoints,.book-toolbar .button,.checkpoint-actions').forEach(el=>el.remove());
+  wrap.querySelectorAll('textarea').forEach(el=>{
+    const answer=document.createElement('div');
+    answer.className='print-answer';
+    answer.innerHTML='<strong>Answer:</strong> ';
+    const text=document.createElement('span');
+    text.textContent=el.value.trim()||'No response recorded.';
+    answer.append(text);
+    el.replaceWith(answer);
+  });
+  wrap.querySelectorAll('input[type=text]').forEach(el=>{
+    const answer=document.createElement('span');
+    answer.className='print-answer';
+    answer.textContent='Answer: '+(el.value.trim()||'No response recorded.');
+    el.replaceWith(answer);
+  });
+  wrap.querySelectorAll('select').forEach(el=>{
+    const answer=document.createElement('span');
+    answer.className='print-answer';
+    answer.textContent='Response: '+(el.value?el.options[el.selectedIndex].text:'No response selected.');
+    el.replaceWith(answer);
+  });
+  wrap.querySelectorAll('input[type=radio],input[type=checkbox]').forEach(el=>{
+    const mark=document.createElement('span');
+    mark.className='print-choice-mark';
+    mark.textContent=el.checked?'☑':'☐';
+    el.replaceWith(mark);
+  });
+  wrap.querySelectorAll('button').forEach(button=>{
+    const isChoice=button.classList.contains('choice')||button.classList.contains('mood-select');
+    if(isChoice&&button.getAttribute('aria-pressed')==='true'){
+      const selected=document.createElement('span');
+      selected.className='print-selected-choice';
+      selected.textContent='Selected: '+button.textContent.trim();
+      button.replaceWith(selected);
+    }else{
+      button.remove();
+    }
+  });
+  wrap.querySelectorAll('a').forEach(el=>el.remove());
+  wrap.querySelectorAll('audio').forEach(audio=>{
+    const note=document.createElement('span');
+    note.className='print-audio-note';
+    note.textContent='Audio sketch available on the website.';
+    audio.replaceWith(note);
+  });
+  wrap.querySelectorAll('.feedback').forEach(el=>{if(!el.textContent.trim())el.remove();});
+  return wrap.innerHTML;
+}
+
+function printFullLesson(){
+  pauseAudio();
+  const original={step:state.step,scene:state.scene,bookChapter:state.bookChapter,view:state.view};
+  const blocks=[];
+  blocks.push(`<header class='print-full-cover'><span class='print-meta'>Unit 1 · Language in Use</span><h1>The Silent Forest</h1><p class='print-lead'>A four-lesson story journey from listening and connection to a future-focused music proposal.</p><p>Student answers are included exactly as they appear in this browser. Keep this PDF as a record of your work or add it to Notability.</p><p class='print-meta'><strong>iPad tip:</strong> choose Print, pinch out on the preview to open the PDF, then tap Share → Open in Notability.</p></header>`);
+  steps.forEach((step,index)=>{
+    if(index===1){
+      [0,1,2].forEach(sceneIndex=>{
+        state.step=index;
+        state.scene=sceneIndex;
+        state.bookChapter=[1,4,13][sceneIndex];
+        blocks.push(`<article class='print-step'><h2>Lesson 1 · Story &amp; Persuasion</h2><h3>Story stage ${sceneIndex+1}: ${scenes[sceneIndex].title}</h3>${staticizePrintHtml(reading())}</article>`);
+      });
+    }else{
+      state.step=index;
+      blocks.push(`<article class='print-step'><h2>Lesson ${step.lesson} · ${lessonTitles[index]}</h2>${staticizePrintHtml(renderers[index]())}</article>`);
+    }
+  });
+  Object.assign(state,original);
+  const output=$('print-output');
+  output.className='print-full-document';
+  output.innerHTML=blocks.join('')+'<footer class="print-full-footer">End of student workbook · The online version remains available for interactive work.</footer>';
+  window.addEventListener('afterprint',()=>{
+    output.className='';
+    output.innerHTML='';
+    render();
+  },{once:true});
+  window.print();
+}
 $('teacher-tools-toggle').addEventListener('click',()=>setView(state.view==='teacher'?'student':'teacher'));
 $('student-view').addEventListener('click',()=>{setView('student');markUnsaved();});
 $('teacher-view').addEventListener('click',()=>{setView('teacher');markUnsaved();});
@@ -147,6 +237,7 @@ $('complete-step').addEventListener('click',()=>{if(state.complete.has(state.ste
 $('timer-toggle').addEventListener('click',toggleTimer);
 $('timer-reset').addEventListener('click',()=>{stopTimer();state.times[state.step]=steps[state.step].minutes*60;updateTimer();});
 $('print-work').addEventListener('click',printNotes);
+$('print-full').addEventListener('click',printFullLesson);
 $('step-content').addEventListener('input',e=>recordInput(e.target));
 $('step-content').addEventListener('change',e=>recordInput(e.target));
 $('step-content').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;if(b.dataset.scene!==undefined){markUnsaved();state.scene=Number(b.dataset.scene);state.bookChapter=[1,4,13][state.scene];render();$('scene-tab-'+state.scene)?.focus({preventScroll:true});return;}if(b.dataset.book!==undefined){markUnsaved();state.bookChapter=Number(b.dataset.book);$('embedded-storybook').src='storybook.html?chapter='+state.bookChapter;$('book-large-link').href='storybook.html?chapter='+state.bookChapter;document.querySelectorAll('[data-book]').forEach(c=>c.setAttribute('aria-pressed',String(Number(c.dataset.book)===state.bookChapter)));return;}if(b.dataset.choice){const key=b.dataset.choice;remember(key,key==='selected-mood'?'Chosen soundtrack mood':key==='opening-position'?'Starting position':'Position after the story');state.drafts[key]=b.dataset.value;markUnsaved();document.querySelectorAll('[data-choice]').forEach(c=>{if(c.dataset.choice===key)c.setAttribute('aria-pressed',String(c.dataset.value===b.dataset.value));});if($('selected-mood-note'))$('selected-mood-note').textContent='Your choice: '+b.dataset.value;return;}if(b.dataset.check){const checks={reading:checkReading,sort:checkSort,forms:checkForms,transform:checkTransform,existence:checkExistence,future:checkFuture,exit:checkExit};checks[b.dataset.check]?.();markUnsaved();}if(b.dataset.action==='print')printNotes();});
