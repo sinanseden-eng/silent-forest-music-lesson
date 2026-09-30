@@ -1,6 +1,6 @@
 'use strict';
 // Load the owner's existing publication directly; the lesson does not duplicate its text.
-const bookOrigin='https://raw.githubusercontent.com/sinanseden-eng/silent-forest/a6707a7c82d7aac9f1ec7031de700c6de6f07282/';
+const bookOrigin='https://raw.githubusercontent.com/sinanseden-eng/silent-forest/8d066b674cc6bba3180da5b67ea2c119700f8f10/';
 const frame=document.getElementById('book-frame');
 const statusPanel=document.getElementById('book-status');
 const statusText=document.getElementById('book-status-text');
