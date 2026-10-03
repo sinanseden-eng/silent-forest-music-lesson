@@ -36,3 +36,13 @@ Lesson 1 reduces written note-taking and prioritises reading and discussion.
 Lesson 2 includes the oral Story Scene Reporter task.
 Lesson 3 scans all eight page 9 topics but develops two in depth.
 Lesson 4 models, plans, drafts, peer-reviews, and revises an 80–100-word forecast.
+
+
+Optional Lesson 5: A night at the observatory — steps 9–11 (10 + 12 + 18 minutes).
+For fast-finishing classes: contextual word formation, sentence repair and
+meaning-preserving rewrites, followed by an 80–100-word school report and revision.
+An optional two-sentence future prediction extends the challenge further.
+Core completion remains separate, so skipping Lesson 5 does not make Lessons 1–4
+incomplete. Existing saved answers retain their original step and field identifiers.
+Lesson 5 work is included in Save progress, Print notes and PDF for Notability.
+Teacher guidance remains accessible through the invisible bottom-left button.

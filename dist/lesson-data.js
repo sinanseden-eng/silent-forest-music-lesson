@@ -1,3 +1,5 @@
+import {extensionSteps} from './extension-lesson.js';
+
 export const formQuestions = [
   {
     "before": "Eva plays the flute",
@@ -469,9 +471,12 @@ export const musicTopics = [
   }
 ];
 
+steps.push(...extensionSteps);
+
 export function normalizeAnswer(value){return String(value).trim().toLowerCase().replace(/[.!?]+$/,'').trim();}
 export function wordCount(value){return (String(value).trim().match(/\S+/g)||[]).length;}
-export function parseStep(hash){const m=String(hash).match(/^#step-([1-8])$/);return m?Number(m[1])-1:0;}
+export function parseStep(hash){const m=String(hash).match(/^#step-([1-9]\d*)$/);const n=m?Number(m[1]):0;return n>=1&&n<=steps.length?n-1:0;}
 export function formatTime(value){return `${String(Math.floor(Math.max(0,value)/60)).padStart(2,'0')}:${String(Math.max(0,value)%60).padStart(2,'0')}`;}
 
-export const lessonTitles = ["Story & persuasion", "Grammar & sound", "The future of music", "Forecast workshop"];
+export const lessonTitles = ["Story & persuasion", "Grammar & sound", "The future of music", "Forecast workshop", "A night at the observatory"];
+

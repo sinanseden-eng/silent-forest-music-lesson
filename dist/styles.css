@@ -39,3 +39,9 @@
 .teacher-entry{display:grid;place-items:center;min-width:44px;min-height:44px;border:0;border-radius:50%;background:transparent;color:var(--muted);font-size:1.1rem}
 .teacher-entry:hover,.teacher-entry[aria-expanded=true]{background:transparent}
 @media print{.teacher-entry-row{display:none!important}}
+
+
+.l5-intro{background:linear-gradient(135deg,#edf5ec,#fff9ea)}
+.l5-event-log{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:20px 0}.l5-event-log>div{padding:16px;background:#fff;border:1px solid var(--line);border-radius:10px}.l5-event-log strong{display:block;color:var(--green);margin-bottom:9px}.l5-event-log p{font-size:.9rem;margin:0}
+@media(max-width:1000px){.l5-event-log{grid-template-columns:1fr}}
+@media print{.l5-event-log{display:block}.l5-event-log>div{margin:8px 0;break-inside:avoid}}
