@@ -38,11 +38,16 @@ Lesson 3 scans all eight page 9 topics but develops two in depth.
 Lesson 4 models, plans, drafts, peer-reviews, and revises an 80–100-word forecast.
 
 
-Optional Lesson 5: A night at the observatory — steps 9–11 (10 + 12 + 18 minutes).
+Optional Lesson 5: The Great Simit Glitch — steps 9–11 (10 + 12 + 18 minutes).
 For fast-finishing classes: contextual word formation, sentence repair and
-meaning-preserving rewrites, followed by an 80–100-word school report and revision.
+meaning-preserving rewrites and a rescue pitch, followed by an 80–100-word funny
+school-blog report and revision. A voice-typing mix-up delivers 100 trays of simit
+to a school-festival café. Students invent a plan with no extra budget or food waste
+and write their own ending.
 An optional two-sentence future prediction extends the challenge further.
 Core completion remains separate, so skipping Lesson 5 does not make Lessons 1–4
-incomplete. Existing saved answers retain their original step and field identifiers.
+incomplete. Existing core answers retain their original identifiers. This revised Lesson 5
+uses fresh response identifiers so earlier scenario answers are not relabelled.
 Lesson 5 work is included in Save progress, Print notes and PDF for Notability.
 Teacher guidance remains accessible through the invisible bottom-left button.
+
